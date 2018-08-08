@@ -172,7 +172,7 @@ namespace Bridge.Messenger
             if (!this._calls.ContainsKey(key))
                 return;
 
-            var toremove = this._calls[key].Where(tuple => tuple.Item1 == subscriber);
+            var toremove = this._calls[key].Where(tuple => tuple.Item1 == subscriber).ToList();
 
             foreach (var tuple in toremove)
                 this._calls[key].Remove(tuple);
